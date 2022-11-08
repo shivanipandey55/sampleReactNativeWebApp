@@ -21,6 +21,10 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'ts-loader',
       },
+      {
+        test: /\.(gif|jpe?g|png|svg)$/,
+        loader: 'url-loader',
+      },
     ],
   },
   plugins: [

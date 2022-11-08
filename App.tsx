@@ -1,15 +1,13 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { Dimensions, StyleSheet, Text, View, Platform } from 'react-native';
+import { Dimensions, StyleSheet, View } from 'react-native';
+import MainStack from './src/navigation/MainStack';
 const { height } = Dimensions.get('screen');
-
 const App = () => {
   return (
     <View style={styles.container}>
       <StatusBar animated={true} hidden={true} />
-      <View style={styles.center}>
-        <Text>Welcome to {Platform.OS} Sample App</Text>
-      </View>
+      <MainStack />
     </View>
   );
 };
