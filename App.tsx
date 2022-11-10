@@ -2,13 +2,17 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { Dimensions, StyleSheet, View } from 'react-native';
 import MainStack from './src/navigation/MainStack';
+import { Provider } from 'react-redux';
+import { store } from './src/core/store/store';
 const { height } = Dimensions.get('screen');
 const App = () => {
   return (
-    <View style={styles.container}>
-      <StatusBar animated={true} hidden={true} />
-      <MainStack />
-    </View>
+    <Provider store={store}>
+      <View style={styles.container}>
+        <StatusBar animated={true} hidden={true} />
+        <MainStack />
+      </View>
+    </Provider>
   );
 };
 

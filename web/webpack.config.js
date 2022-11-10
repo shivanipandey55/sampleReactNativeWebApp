@@ -28,12 +28,22 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      process: { env: {} },
+    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './index.html'),
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
   resolve: {
+    fallback: {
+      https: require.resolve('https-browserify'),
+      http: require.resolve('stream-http'),
+      assert: require.resolve('assert/'),
+      zlib: require.resolve('browserify-zlib'),
+      stream: require.resolve('stream-browserify'),
+    },
     extensions: [
       '.web.tsx',
       '.web.ts',
