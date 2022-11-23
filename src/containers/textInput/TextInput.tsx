@@ -5,7 +5,7 @@ import { TextInputStyle } from './TextInput.Style';
 type Props = {
   textInputStyle?: {};
   value: string;
-  placeHolder: string;
+  placeHolder?: string;
   onChangeText: (value: string) => void;
   onSubmitText?: () => {};
   ref?: MutableRefObject<any>;
