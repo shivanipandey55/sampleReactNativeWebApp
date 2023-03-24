@@ -1,16 +1,16 @@
-import React, { useRef, useState } from 'react';
-import { View } from 'react-native';
-import { Button } from '../../containers/button/Button';
-import AuthWrapper from '../../containers/template/AuthWrapper';
-import { TextField } from '../../containers/text/Text';
-import { TextInputField } from '../../containers/textInput/TextInput';
-import SingUpController from './controller/SignupController';
-import signUpFormStyle from './SignUp.Styles';
+import React, { useRef, useState } from "react";
+import { View } from "react-native";
+import { Button } from "../../containers/button/Button";
+import AuthWrapper from "../../containers/template/AuthWrapper";
+import { TextField } from "../../containers/text/Text";
+import { TextInputField } from "../../containers/textInput/TextInput";
+import SingUpController from "./controller/SignupController";
+import signUpFormStyle from "./SignUp.Styles";
 const SignUp = () => {
   const { handleSignUp } = SingUpController();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const passwordInput = useRef<any>(null);
   const singUpClickHandler = () => {
     handleSignUp();
@@ -20,9 +20,9 @@ const SignUp = () => {
       <View
         style={{
           flex: 1,
-          paddingHorizontal: '5%',
-          paddingTop: '10%',
-          backgroundColor: 'white',
+          paddingHorizontal: "5%",
+          paddingTop: "10%",
+          backgroundColor: "white",
         }}
       >
         <TextField
@@ -34,7 +34,7 @@ const SignUp = () => {
           value="Good Morning "
         />
         <View style={{ marginTop: 50, marginBottom: 20 }}>
-          <View style={{ flexDirection: 'row', marginBottom: 20 }}>
+          <View style={{ flexDirection: "row", marginBottom: 20 }}>
             <TextField
               textStyle={signUpFormStyle.headerTextHighLighted}
               value="Create "
