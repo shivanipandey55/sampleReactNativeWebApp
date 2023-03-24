@@ -1,3 +1,4 @@
+import { StackActions, useNavigation } from "@react-navigation/native";
 import React, { useRef, useState } from "react";
 import { View } from "react-native";
 import { Button } from "../../containers/button/Button";
@@ -12,8 +13,18 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const passwordInput = useRef<any>(null);
+  const navigation = useNavigation();
+
   const singUpClickHandler = () => {
-    handleSignUp("Developer", "Developerss5@gmail.com", 1234567890);
+    handleSignUp("Developer", "Developerss5@gmail.com", 1234567890)?.then(
+      (res) => {
+        console.log(res);
+
+        if (res.result === 0) {
+          navigation.dispatch(StackActions.replace("Home"));
+        }
+      }
+    );
   };
   return (
     <AuthWrapper>

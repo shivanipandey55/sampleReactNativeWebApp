@@ -1,7 +1,8 @@
+import { useDispatch } from "react-redux";
 import SingUpController from "../../screens/Signup/controller/SignupController"
 import { validEmailFormat, validNameFormat, validPhoneNumberFormat } from "../../util";
 
-const { validate } = SingUpController()
+const { validate, handleSignUp } = SingUpController()
 
 jest.mock('react-redux', () => ({
   useDispatch: jest.fn()
@@ -10,6 +11,8 @@ jest.mock('react-redux', () => ({
 jest.mock("@react-navigation/native", () => ({
   useNavigation: jest.fn()
 }))
+
+jest.mock("../../network/wrap-request");
 
 describe("Email Validity test", () => {
   test("Valid email", () => {
@@ -76,3 +79,11 @@ describe("Signup Page", () => {
     expect(validate("naman", "abc@gmail.com", 123456)).not.toBe(true)
   })
 })
+
+describe("Simple mock", () => {
+  it("test success", () => {
+      handleSignUp("naman", "naman@gmail.com", 1234567890)?.then(res => {
+          expect(res).toStrictEqual({ result: 0, msg: "success" });
+      });
+  });
+});
