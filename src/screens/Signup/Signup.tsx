@@ -13,7 +13,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const passwordInput = useRef<any>(null);
   const singUpClickHandler = () => {
-    handleSignUp("Developer", "Developerss5@gmail.com", 123456);
+    handleSignUp("Developer", "Developerss5@gmail.com", 1234567890);
   };
   return (
     <AuthWrapper>

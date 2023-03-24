@@ -2,14 +2,18 @@ import { StackActions, useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../../core/store/store';
 import handleSignupThunk from '../../../core/thunk/signup/Signup';
-import { validate } from '../SignupUtils';
+import { validEmailFormat, validNameFormat, validPhoneNumberFormat } from '../../../util';
 
 const SingUpController = () => {
   const dispatch: AppDispatch = useDispatch();
   const navigation = useNavigation();
 
-  const handleSignUp = (name: string, email: string, phoneNumber: number) => {
-    if (validate(name, email, phoneNumber)) {
+  const validate = (name: string, email: string, phoneNumber: number | string) => {
+    return validEmailFormat(email) && validNameFormat(name) && validPhoneNumberFormat(phoneNumber)
+  }
+
+  const handleSignUp = (name: string, email: string, phoneNumber: number) => {    
+    if (validate(name, email, phoneNumber)) {      
       dispatch(
         handleSignupThunk({
           name: name,
@@ -19,8 +23,10 @@ const SingUpController = () => {
       ).then((response: any) => {
         console.log(response);
         navigation.dispatch(StackActions.replace('Home'));
+        return {status: 200}
       });
     } 
+    return {status: 500}
   };
   return { handleSignUp, validate };
 };

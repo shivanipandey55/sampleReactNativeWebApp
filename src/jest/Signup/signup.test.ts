@@ -1,28 +1,78 @@
-import { validate } from "../../screens/Signup/SignupUtils"
+import SingUpController from "../../screens/Signup/controller/SignupController"
+import { validEmailFormat, validNameFormat, validPhoneNumberFormat } from "../../util";
 
-describe("Test function for signup page", () => {
-  test("Password of length 5", () => {
-    expect(validate("abc", "abc@gmail.com", 12345)).toBe(true)
+const { validate } = SingUpController()
+
+jest.mock('react-redux', () => ({
+  useDispatch: jest.fn()
+}));
+
+jest.mock("@react-navigation/native", () => ({
+  useNavigation: jest.fn()
+}))
+
+describe("Email Validity test", () => {
+  test("Valid email", () => {
+    expect(validEmailFormat("naman@gmail.com")).toBe(true)
   })
-  test("Password of length not equal to 5", () => {
-    expect(validate("abc", "abc@gmail.com", 1234)).not.toBe(true)
+  test("Invalid email -> doesn't contain .com", () => {
+    expect(validEmailFormat("naman@gmail")).not.toBe(true)
   })
-  test("Email is blank", () => {
-    expect(validate("abc", "", 12345)).not.toBe(true)
+  test("Invalid email -> doesn't contain @gmail", () => {
+    expect(validEmailFormat("namanil.com")).not.toBe(true)
   })
-  test("Email is not blank", () => {
-    expect(validate("abc", "abc@gmail.com", 12345)).toBe(true)
+  test("Invalid email -> doesn't contain character between @ and .com", () => {
+    expect(validEmailFormat("naman@.com")).not.toBe(true)
   })
-  test("Name is blank", () => {
-    expect(validate("", "abc@gmail.com", 12345)).not.toBe(true)
+})
+
+describe("Name validity test", () => {
+  test("valid name -> with atleast 2 characters", () => {
+    expect(validNameFormat("naman")).toBe(true)
   })
-  test("Name is not blank", () => {
-    expect(validate("abc", "abc@gmail.com", 12345)).toBe(true)
+  test("valid name -> with atmost 20 characters", () => {
+    expect(validNameFormat("namanagarwaldbs")).toBe(true)
   })
-  test("Password is 0", () => {
-    expect(validate("abc", "abc@gmail.com", 0)).not.toBe(true)
+  test("invalid name -> with less than 2 characters", () => {
+    expect(validNameFormat("n")).not.toBe(true)
   })
-  test("Password is not 0", () => {
-    expect(validate("abc", "abc@gmail.com", 12343)).toBe(true)
+  test("invalid name -> with more than 20 characters", () => {
+    expect(validNameFormat("namanagarwalsandipguptashivanipandeyganeshagarwal")).not.toBe(true)
+  })
+  test("invalid name -> with numeric values", () => {
+    expect(validNameFormat("123455")).not.toBe(true)
+  })
+  test("invalid name -> alpha-numeric values", () => {
+    expect(validNameFormat("namanagarwal438")).not.toBe(true)
+  })
+})
+
+describe("Phone Number Validity Test", () => {
+  test("Valid Phone Number -> with 10 digits", () => {
+    expect(validPhoneNumberFormat(1234567890)).toBe(true)
+  })
+  test("Invalid Phone Number -> with less than 10 digits", () => {
+    expect(validPhoneNumberFormat(123455)).not.toBe(true)
+  })
+  test("Invalid Phone Number -> with more than 10 digits", () => {
+    expect(validPhoneNumberFormat(123456789012)).not.toBe(true)
+  })
+  test("Invalid Phone Number -> alpha-numeric characters", () => {
+    expect(validPhoneNumberFormat("naman123456")).not.toBe(true)
+  })
+})
+
+describe("Signup Page", () => {
+  test("valid values", () => {
+    expect(validate("abc", "abc@gmail.com", 1234567890)).toBe(true)
+  })
+  test("Invalid Values -> invalid name(less than 2 characters)", () => {
+    expect(validate("a", "abc@gmail.com", 1234567890)).not.toBe(true)
+  })
+  test("Invalid Values -> invalid email", () => {
+    expect(validate("naman", "abc@gmail", 1234567890)).not.toBe(true)
+  })
+  test("Invalid Values -> invalid phone(less than 10 digits)", () => {
+    expect(validate("naman", "abc@gmail.com", 123456)).not.toBe(true)
   })
 })
