@@ -5,14 +5,18 @@ import { Dimensions, StyleSheet, View } from "react-native";
 import MainStack from "./src/navigation/MainStack";
 import { Provider } from "react-redux";
 import { store } from "./src/core/store/store";
+import { Provider as PaperProvider } from "react-native-paper";
+import { theme } from "./src/theme/theme";
 const { height } = Dimensions.get("screen");
 const App = () => {
   return (
     <Provider store={store}>
-      <View style={styles.container}>
-        <StatusBar animated={true} hidden={true} />
-        <MainStack />
-      </View>
+      <PaperProvider theme={theme}>
+        <View style={styles.container}>
+          <StatusBar animated={true} hidden={true} />
+          <MainStack />
+        </View>
+      </PaperProvider>
     </Provider>
   );
 };
@@ -29,4 +33,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
-module.exports = __DEV__ ? StorybookUIRoot : App;
+export default __DEV__ ? StorybookUIRoot : App;
+// export default App;

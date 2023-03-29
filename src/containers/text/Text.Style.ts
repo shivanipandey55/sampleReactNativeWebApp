@@ -1,9 +1,7 @@
-import { StyleSheet } from 'react-native';
-import Colors from '../../theme/colors';
+import { StyleSheet } from "react-native";
+import { theme } from "../../theme/theme";
 export const TextStyle = StyleSheet.create({
   text: {
-    fontSize: 14,
-    color: Colors.textPrimary,
-    fontWeight: 'normal',
+    ...theme.fonts.titleMedium,
   },
 });

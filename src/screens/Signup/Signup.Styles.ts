@@ -1,17 +1,17 @@
-import { StyleSheet } from 'react-native';
-import Colors from '../../theme/colors';
+import { StyleSheet } from "react-native";
+import Colors from "../../theme/colors";
+import { theme } from "../../theme/theme";
 const SignUpStyle = StyleSheet.create({
   mainContainerWeb: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   headerTextHighLighted: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    ...theme.fonts.headlineMedium,
     color: Colors.primary,
   },
   headerText: {
-    fontSize: 17,
+    ...theme.fonts.headlineMedium,
   },
 });
 export default SignUpStyle;

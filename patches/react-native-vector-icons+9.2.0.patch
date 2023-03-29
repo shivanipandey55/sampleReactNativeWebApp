@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-native-vector-icons/lib/object-utils.js b/node_modules/react-native-vector-icons/lib/object-utils.js
+index d03b55b..4d1724a 100644
+--- a/node_modules/react-native-vector-icons/lib/object-utils.js
++++ b/node_modules/react-native-vector-icons/lib/object-utils.js
+@@ -17,4 +17,5 @@ const omit = (obj, ...keysToOmit) => {
+     }, {});
+ };
+ 
+-module.exports = { pick, omit };
++// module.exports = { pick, omit };
++export {pick, omit}
+\ No newline at end of file

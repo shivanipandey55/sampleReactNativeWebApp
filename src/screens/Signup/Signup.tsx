@@ -5,7 +5,7 @@ import AuthWrapper from "../../containers/template/AuthWrapper";
 import { TextField } from "../../containers/text/Text";
 import { TextInputField } from "../../containers/textInput/TextInput";
 import SingUpController from "./controller/SignupController";
-import signUpFormStyle from "./SignUp.Styles";
+import signUpFormStyle from "./Signup.Styles";
 const SignUp = () => {
   const { handleSignUp } = SingUpController();
   const [name, setName] = useState("");
@@ -15,6 +15,7 @@ const SignUp = () => {
   const singUpClickHandler = () => {
     handleSignUp();
   };
+
   return (
     <AuthWrapper>
       <View
