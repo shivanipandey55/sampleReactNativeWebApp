@@ -1,4 +1,4 @@
-import StorybookUIRoot from "./.ondevice/Storybook";
+// import StorybookUIRoot from "./.ondevice/Storybook";
 import React from "react";
 import { StatusBar } from "react-native";
 import { Dimensions, StyleSheet, View } from "react-native";
@@ -8,6 +8,8 @@ import { store } from "./src/core/store/store";
 import { Provider as PaperProvider } from "react-native-paper";
 import { theme } from "./src/theme/theme";
 const { height } = Dimensions.get("screen");
+import "./src/i18n/index";
+
 const App = () => {
   return (
     <Provider store={store}>
@@ -33,5 +35,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
-export default __DEV__ ? StorybookUIRoot : App;
-// export default App;
+// export default __DEV__ ? StorybookUIRoot : App;
+export default App;

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
 import { Button } from "../../containers/button/Button";
 import AuthWrapper from "../../containers/template/AuthWrapper";
@@ -6,12 +6,16 @@ import { TextField } from "../../containers/text/Text";
 import { TextInputField } from "../../containers/textInput/TextInput";
 import SingUpController from "./controller/SignupController";
 import signUpFormStyle from "./Signup.Styles";
+import { useTranslation } from "react-i18next";
+
 const SignUp = () => {
+  const { t } = useTranslation();
+
   const { handleSignUp } = SingUpController();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const passwordInput = useRef<any>(null);
+  // const passwordInput = useRef<any>(null);
   const singUpClickHandler = () => {
     handleSignUp();
   };
@@ -28,7 +32,8 @@ const SignUp = () => {
       >
         <TextField
           textStyle={signUpFormStyle.headerTextHighLighted}
-          value="Hello! "
+          value={t("dummyNamespace.medium")}
+          //value="Hello! "
         />
         <TextField
           textStyle={signUpFormStyle.headerTextHighLighted}
@@ -52,7 +57,7 @@ const SignUp = () => {
           <TextField value="Password" />
           <TextInputField
             value={password}
-            ref={passwordInput}
+            // ref={passwordInput}
             onChangeText={setPassword}
           />
         </View>
