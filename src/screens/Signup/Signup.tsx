@@ -15,7 +15,6 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const passwordInput = useRef<any>(null);
   const singUpClickHandler = () => {
     handleSignUp();
   };
@@ -32,36 +31,34 @@ const SignUp = () => {
       >
         <TextField
           textStyle={signUpFormStyle.headerTextHighLighted}
-          value={t("dummyNamespace.medium")}
-          //value="Hello! "
+          value={t("SignUp.hello")}
         />
         <TextField
           textStyle={signUpFormStyle.headerTextHighLighted}
-          value="Good Morning "
+          value={t("SignUp.good_morning")}
         />
         <View style={{ marginTop: 50, marginBottom: 20 }}>
           <View style={{ flexDirection: "row", marginBottom: 20 }}>
             <TextField
               textStyle={signUpFormStyle.headerTextHighLighted}
-              value="Create "
+              value={`${t("SignUp.create")} \n`}
             />
             <TextField
               textStyle={signUpFormStyle.headerText}
-              value="your account"
+              value={t("SignUp.your_account")}
             />
           </View>
-          <TextField value="Name" />
+          <TextField value={t("SignUp.name")} />
           <TextInputField value={name} onChangeText={setName} />
-          <TextField value="Email" />
+          <TextField value={t("SignUp.email")} />
           <TextInputField value={email} onChangeText={setEmail} />
-          <TextField value="Password" />
-          <TextInputField
-            value={password}
-            // ref={passwordInput}
-            onChangeText={setPassword}
-          />
+          <TextField value={t("SignUp.password")} />
+          <TextInputField value={password} onChangeText={setPassword} />
         </View>
-        <Button onclick={singUpClickHandler} btnText="SignUp"></Button>
+        <Button
+          onclick={singUpClickHandler}
+          btnText={t("SignUp.signUp")}
+        ></Button>
       </View>
     </AuthWrapper>
   );

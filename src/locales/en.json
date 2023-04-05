@@ -1,5 +1,12 @@
 {
-    "dummyNamespace": {
-      "medium": "medium is great!"
+    "SignUp": {
+      "hello": "Hello!",
+      "good_morning":"Good Morning ",
+      "create":"Create",
+      "your_account":"your account",
+      "name":"Name",
+      "email":"Email",
+      "password":"Password",
+      "signUp":"SignUp"
     }
   }
