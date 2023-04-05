@@ -46,3 +46,7 @@ yarn run ios
 - [React Native Paper](https://reactnativepaper.com/) - Cross-platform UI kit library containing a collection of customizable and production-ready    components and to support custom themes
 - [Reacti18next](https://react.i18next.com/getting-started) - Helps to translate your JSON internationalization files
 - [React navigation](https://reactnavigation.org/docs/getting-started/) - Enables to implement navigation functionality
+- [Axios](https://www.npmjs.com/package/axios#features)
+# Config variables
+- [react-native-config](https://github.com/luggit/react-native-config) - Module to expose config variables in Android and Ios
+- [dotenv-webpack](https://www.npmjs.com/package/dotenv-webpack) - for web
