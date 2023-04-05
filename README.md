@@ -47,6 +47,7 @@ yarn run ios
 - [Reacti18next](https://react.i18next.com/getting-started) - Helps to translate your JSON internationalization files
 - [React navigation](https://reactnavigation.org/docs/getting-started/) - Enables to implement navigation functionality
 - [Axios](https://www.npmjs.com/package/axios#features)
+- [Netinfo](https://github.com/react-native-netinfo/react-native-netinfo) - Helps to get Network Info for Android, iOS and macOS
 # Config variables
 - [react-native-config](https://github.com/luggit/react-native-config) - Module to expose config variables in Android and Ios
 - [dotenv-webpack](https://www.npmjs.com/package/dotenv-webpack) - for web
