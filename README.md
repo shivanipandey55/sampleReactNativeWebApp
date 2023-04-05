@@ -19,13 +19,15 @@ yarn
 ```sh
 # Start on web 
 yarn run web 
+open http://localhost:8080/
 ```
 ```sh
 # Start on android 
 yarn run android 
 ```
 ```sh
-# Start on android 
+# Start on ios
+cd ios && pod install 
 yarn run ios
 ```
 
