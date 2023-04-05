@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { store } from "./src/core/store/store";
 import { Provider as PaperProvider } from "react-native-paper";
 import { theme } from "./src/theme/theme";
+// import Config from "react-native-config";
 const { height } = Dimensions.get("screen");
 import "./src/i18n/index";
 
@@ -35,5 +36,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
-// export default __DEV__ ? StorybookUIRoot : App;
+
+// export default JSON.parse(Config.ENABLE_STORYBOOK ?? "false")
+//   ? StorybookUIRoot
+//   : App;
 export default App;
