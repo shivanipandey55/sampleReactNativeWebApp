@@ -67,4 +67,4 @@ buck-out/
 
 #firebase google service files
 /android/app/google-services.json
-/ios/ReactNativeWebApp/GoogleService-Info.plist
+/ios/GoogleService-info.plist

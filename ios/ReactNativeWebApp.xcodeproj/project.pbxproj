@@ -13,7 +13,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1699A26829D2FBF800FACC4F /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1699A26729D2FBF800FACC4F /* fonts */; };
-		2763C3D52A38625A00E924C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2763C3D42A38625900E924C0 /* GoogleService-Info.plist */; };
+		27B218C02A3876A7009537DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27B218BF2A3876A7009537DC /* GoogleService-Info.plist */; };
 		678D07566022EF1228954A11 /* libPods-ReactNativeWebApp-ReactNativeWebAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0ED6B18D1AB7BB1D1C73B3E /* libPods-ReactNativeWebApp-ReactNativeWebAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		F2E9DA890FFCE1B4261F9582 /* libPods-ReactNativeWebApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCFD0984AB9103F701775F5 /* libPods-ReactNativeWebApp.a */; };
@@ -40,7 +40,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactNativeWebApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ReactNativeWebApp/main.m; sourceTree = "<group>"; };
 		1699A26729D2FBF800FACC4F /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
-		2763C3D42A38625900E924C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		27B218BF2A3876A7009537DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2DCFD0984AB9103F701775F5 /* libPods-ReactNativeWebApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeWebApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A8352D2191574FC3154A78 /* Pods-ReactNativeWebApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeWebApp.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeWebApp/Pods-ReactNativeWebApp.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReactNativeWebApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				2763C3D42A38625900E924C0 /* GoogleService-Info.plist */,
+				27B218BF2A3876A7009537DC /* GoogleService-Info.plist */,
 				1699A26729D2FBF800FACC4F /* fonts */,
 				13B07FAE1A68108700A75B9A /* ReactNativeWebApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -202,6 +202,7 @@
 				AB33E13B7955B8173804CC94 /* [CP] Embed Pods Frameworks */,
 				646262217044C24DC4EDFCB9 /* [CP] Copy Pods Resources */,
 				DBEFD659F242041000613F52 /* [CP-User] [RNFB] Core Configuration */,
+				02ADE402ECD583390DC38E29 /* [CP-User] [RNFB] Crashlytics Configuration */,
 			);
 			buildRules = (
 			);
@@ -262,7 +263,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				2763C3D52A38625A00E924C0 /* GoogleService-Info.plist in Resources */,
+				27B218C02A3876A7009537DC /* GoogleService-Info.plist in Resources */,
 				01DF39EAE43E4887A6EF8AD3 /* Lato.ttf in Resources */,
 				1699A26829D2FBF800FACC4F /* fonts in Resources */,
 			);
@@ -286,6 +287,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+		};
+		02ADE402ECD583390DC38E29 /* [CP-User] [RNFB] Crashlytics Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "[CP-User] [RNFB] Crashlytics Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\nif [[ ${PODS_ROOT} ]]; then\n  echo \"info: Exec FirebaseCrashlytics Run from Pods\"\n  \"${PODS_ROOT}/FirebaseCrashlytics/run\"\nelse\n  echo \"info: Exec FirebaseCrashlytics Run from framework\"\n  \"${PROJECT_DIR}/FirebaseCrashlytics.framework/run\"\nfi\n";
 		};
 		48EC249CDDD196B9900BF9A5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
