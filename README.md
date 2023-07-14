@@ -1,5 +1,15 @@
 # Sample React-Native-Web App
-Sample ReactNativeWeb template using typescript
+# Code architecture followed by 55Tech developers.
+This repository showing that how we are using clean code architecture, folder structure, and component reusability.
+
+# Features
+Functionality : Work correctly, efficiently, and robustly.
+
+Readability : The primary audience for our code is other developers.
+
+Extensibility : Well-designed code should be extensible as a building block for solving new problems.
+
+Scalability : The code that can scale along with the need of your business.
 
 ## Setup instructions
 
